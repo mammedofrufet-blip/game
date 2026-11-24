@@ -20,6 +20,18 @@
     display: none !important;
 }
 
+.up{
+    width: 60px;
+    border-radius: 1rem;
+    color: red;
+}
+
+.down{
+    width: 60px;
+    border-radius: 1rem;
+    color: green;
+}
+
 .game-area {
     width: 400px;
     padding: 20px;
