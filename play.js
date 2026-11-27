@@ -111,7 +111,7 @@ const moveBall = () => {
     const balls = document.querySelectorAll(".top")
     balls.forEach((e, i) => {
         e.style.right = rights[i] + "px"
-        if (rights[i] > cubsWidth - 70 && allTops[i] >= point && allTops[i] <= point+60) {
+        if (rights[i] > cubsWidth - 70 && allTops[i] >= point && allTops[i] <= point + 60) {
             totalPoints += Number(e.textContent)
             tp.textContent = totalPoints
             rights.splice(i, 1)
@@ -150,3 +150,70 @@ up.addEventListener("click", () => {
 
 const ballInterval = setInterval(createBall, 2000)
 const ballsInterval = setInterval(moveBall, 1001)
+
+
+const onOff = document.querySelector(".on-off")
+const off = document.querySelector(".off")
+const lamp = document.querySelector(".lamp")
+const on = document.querySelector(".on")
+const displayOff = document.querySelector(".display-off")
+// let light = 0
+
+onOff.addEventListener("click", () => {
+    off.classList.toggle("display-off")
+    on.classList.toggle("display-off")
+
+    //     if (light % 2 === 0) {
+    //         off.classList.remove("display-off")
+    //         on.classList.add("display-off")
+    //     }
+    //     else {
+    //         off.classList.add("display-off")
+    //         on.classList.remove("display-off")
+    //     }
+    //     light++
+
+    // if(off.className.includes("display-off")){
+    //     off.classList.remove("display-off")
+    //     on.classList.add("display-off")
+    // }
+    // else{
+    //     off.classList.add("display-off")
+    //     on.classList.remove("display-off")
+    // }
+})
+
+
+const imgSrc = document.querySelector(".src")
+const temp = document.querySelector(".temp")
+const tempPlus = document.querySelector(".temp-plus")
+const tempMinus = document.querySelector(".temp-minus")
+let t = 21
+
+tempPlus.addEventListener("click", () => {
+    t += 5
+ checkTemp()
+})
+
+tempMinus.addEventListener("click", () => {
+    t -= 5
+    checkTemp()
+})
+
+const checkTemp = () => {
+    if (t >= 20) {
+        imgSrc.setAttribute("src", "gunes.jpeg")
+    }
+
+    else if (t >= 10 && t < 20) {
+        imgSrc.setAttribute("src", "kuley.jpeg")
+    }
+    else if (t >= 0 && t < 10) {
+        imgSrc.setAttribute("src", "yagis.jpeg")
+    }
+    else if (t < 0) {
+        imgSrc.setAttribute("src", "gar.jpeg")
+    }
+}
+
+
